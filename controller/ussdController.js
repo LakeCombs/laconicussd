@@ -8,7 +8,8 @@ const UssdController = async (req, res) => {
   console.log(text);
   const userExist = await User.findOne({ phoneNumber });
 
-  if (text.split("*").includes("00") === true) {
+  if (text.split("*").includes("00")) {
+    console.log("setting text to empty");
     text = "";
   }
 

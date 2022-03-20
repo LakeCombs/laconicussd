@@ -5,14 +5,13 @@ const UssdController = async (req, res) => {
   let { phoneNumber, text, sessionId, serviceCode } = req.body;
   let response;
 
-  console.log(text);
   const userExist = await User.findOne({ phoneNumber });
 
   if (text.split("*").includes("00")) {
     console.log("setting text to empty");
     text = "";
   }
-
+  console.log(text);
   // if (text.split("*").includes("0") && text.length <= 3) {
   //   text = "";
   // } else if (text.split("*").includes("0")) {

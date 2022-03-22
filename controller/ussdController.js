@@ -11,22 +11,20 @@ const UssdController = async (req, res) => {
   // console.log(text);
   // // console.log(text.length);
 
-  if (text.split("*").includes("00")) {
-    text = null;
-  }
+  // if (text.split("*").includes("00")) {
+  //   text = "";
+  // }
 
-  if (text.split("*").includes("0")) {
-    text = text.substring(0, text.length - 4);
-    // console.log(text);
-  }
-
-  if (text.length <= 3 && text.split("*").includes("0")) {
-    text = "";
-  }
+  // if (text.split("*").includes("0")) {
+  //   text = text.substring(0, text.length - 4);
+  //   console.log(text.substring(0, text.length - 4), "afer back one staep");
+  //   if (text.length <= 3 && text.split("*").includes("0")) {
+  //     text = "";
+  //   }
+  // }
 
   console.log(text.split("*"));
   console.log(text);
-  console.log(text.substring(0, text.length - 4), "afer back one staep");
 
   if (text === "") {
     response = `CON Welcome to the Agribarter Portal
@@ -46,7 +44,7 @@ const UssdController = async (req, res) => {
           2. Herbicide
           3. Pesticide
           4. Fertilizer
-          0. Back
+
           00. Main menu
           `;
     res.send(response);

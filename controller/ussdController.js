@@ -16,13 +16,17 @@ const UssdController = async (req, res) => {
   }
 
   if (text.split("*").includes("0")) {
-    text === text.substring(0, text.length - 2);
-    console.log(text.length);
+    text = text.substring(0, text.length - 4);
+    // console.log(text);
+  }
+
+  if (text.length <= 3 && text.split("*").includes("0")) {
+    text = "";
   }
 
   console.log(text.split("*"));
-  console.log(text, "the full text");
-  console.log(text.substring(0, text.length - 2), "afer back one staep");
+  console.log(text);
+  console.log(text.substring(0, text.length - 4), "afer back one staep");
 
   if (text === "") {
     response = `CON Welcome to the Agribarter Portal
@@ -248,13 +252,7 @@ const UssdController = async (req, res) => {
         00. Main menu
                        `;
     res.send(response);
-  }
-
-  //
-  //
-  //
-  //
-  else if (text === "1*4*2*1*3") {
+  } else if (text === "1*4*2*1*3") {
     response = `CON You're ordering for 25kg of NPK
           1. Yes
           2. No

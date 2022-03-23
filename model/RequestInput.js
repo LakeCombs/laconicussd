@@ -12,6 +12,10 @@ const requestSchema = new mongoose.Schema(
     },
     input: { type: String },
     quantity: { type: Number },
+    status: {
+      type: String,
+      default: "requested",
+    },
   },
   { timestamp: true }
 );

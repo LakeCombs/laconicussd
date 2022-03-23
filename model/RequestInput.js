@@ -3,7 +3,7 @@ const User = require("./user");
 
 const requestSchema = new mongoose.Schema(
   {
-    userId: {
+    farmerId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: User,
     },

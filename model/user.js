@@ -2,6 +2,11 @@ const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema(
   {
+    phone: {
+      type: String,
+      required: true,
+    },
+
     lastName: {
       type: String,
       required: true,
@@ -20,19 +25,13 @@ const userSchema = new mongoose.Schema(
         "Please fill a valid email address",
       ],
     },
-    phone: {
-      type: String,
-      // required: true,
-    },
 
     client: {
       type: String,
-      required: true,
     },
 
     password: {
       type: String,
-      requried: true,
     },
 
     contactAddress: {

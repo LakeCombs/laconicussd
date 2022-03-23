@@ -6,7 +6,8 @@ const UssdController = async (req, res) => {
   let response;
 
   const userExist = await User.findOne({ phoneNumber });
-  console.log(userExist);
+  const { _id: user } = userExist;
+  console.log(user);
 
   // console.log(text);
   // // console.log(text.length);
@@ -23,7 +24,7 @@ const UssdController = async (req, res) => {
   //   }
   // }
 
-  console.log(text.split("*"));
+  // console.log(text.split("*"));
   console.log(text);
 
   if (text === "") {
@@ -421,6 +422,7 @@ const UssdController = async (req, res) => {
       phoneNumber: phoneNumber,
       input: "NPK",
       quantity: 5,
+      userId: user,
     });
     response = `CON Your fertilizer is on it way, you will get it in 72 hours
       00. Home
@@ -431,6 +433,7 @@ const UssdController = async (req, res) => {
       phoneNumber: phoneNumber,
       input: "NPK",
       quantity: 10,
+      userId: user,
     });
     response = `CON Your 10kg of NPK is on it way, you will get it in 72hours
     00. Home
@@ -441,6 +444,7 @@ const UssdController = async (req, res) => {
       phoneNumber: phoneNumber,
       input: "NPK",
       quantity: 15,
+      userId: user,
     });
     response = `CON Your 25kg of NPK is on it way, you will get it in 72hours
     00. Home
@@ -451,6 +455,7 @@ const UssdController = async (req, res) => {
       phoneNumber: phoneNumber,
       input: "NPK",
       quantity: 50,
+      userId: user,
     });
     response = `CON Your 50kg of NPK is on it way, you will get it in 72hours
     00. Home
@@ -461,6 +466,7 @@ const UssdController = async (req, res) => {
       phoneNumber: phoneNumber,
       input: "NPK",
       quantity: 100,
+      userId: user,
     });
     response = `CON Your 100kg of NPK is on it way, you will get it in 72hours
     00. Home
@@ -471,6 +477,7 @@ const UssdController = async (req, res) => {
       phoneNumber: phoneNumber,
       input: "UREA",
       quantity: 5,
+      userId: user,
     });
     response = `CON Your 5kg UREA is on it way, you will get it in 72 hours
       00. Home
@@ -481,6 +488,7 @@ const UssdController = async (req, res) => {
       phoneNumber: phoneNumber,
       input: "UREA",
       quantity: 10,
+      userId: user,
     });
     response = `CON Your 10kg of UREA is on it way, you will get it in 72hours
     00. Home
@@ -491,6 +499,7 @@ const UssdController = async (req, res) => {
       phoneNumber: phoneNumber,
       input: "UREA",
       quantity: 15,
+      userId: user,
     });
     response = `CON Your 25kg of UREA is on it way, you will get it in 72hours
     00. Home
@@ -501,6 +510,7 @@ const UssdController = async (req, res) => {
       phoneNumber: phoneNumber,
       input: "UREA",
       quantity: 50,
+      userId: user,
     });
     response = `CON Your 50kg of UREA is on it way, you will get it in 72hours
     00. Home
@@ -511,6 +521,7 @@ const UssdController = async (req, res) => {
       phoneNumber: phoneNumber,
       input: "UREA",
       quantity: 100,
+      userId: user,
     }).then((res) => console.log(res));
     response = `CON Your 100kg of UREA is on it way, you will get it in 72hours
     00. Home
@@ -521,6 +532,7 @@ const UssdController = async (req, res) => {
       phoneNumber: phoneNumber,
       input: "Calcium",
       quantity: 5,
+      userId: user,
     }).then((res) => console.log(res));
     response = `CON Your 5kg of Calcium is on it way, you will get it in 72hours
     00. Home
@@ -531,6 +543,7 @@ const UssdController = async (req, res) => {
       phoneNumber: phoneNumber,
       input: "Calcium",
       quantity: 10,
+      userId: user,
     }).then((res) => console.log(res));
     response = `CON Your 10kg of Calcium is on it way, you will get it in 72hours
     00. Home
@@ -541,6 +554,7 @@ const UssdController = async (req, res) => {
       phoneNumber: phoneNumber,
       input: "Calcium",
       quantity: 15,
+      userId: user,
     }).then((res) => console.log(res));
     response = `CON Your 15kg of Calcium is on it way, you will get it in 72hours
     00. Home
@@ -551,6 +565,7 @@ const UssdController = async (req, res) => {
       phoneNumber: phoneNumber,
       input: "Calcium",
       quantity: 50,
+      userId: user,
     }).then((res) => console.log(res));
     response = `CON Your 50kg of Calcium is on it way, you will get it in 72hours
     00. Home
@@ -561,6 +576,7 @@ const UssdController = async (req, res) => {
       phoneNumber: phoneNumber,
       input: "Calcium",
       quantity: 100,
+      userId: user,
     }).then((res) => console.log(res));
     response = `CON Your 100kg of Calcium is on it way, you will get it in 72hours
     00. Home
@@ -571,6 +587,7 @@ const UssdController = async (req, res) => {
       phoneNumber: phoneNumber,
       input: "Compost",
       quantity: 25,
+      userId: user,
     }).then((res) => console.log(res));
     response = `CON Your 25kg of Compost is on it way, you will get it in 72hours
     00. Home
@@ -581,6 +598,7 @@ const UssdController = async (req, res) => {
       phoneNumber: phoneNumber,
       input: "Compost",
       quantity: 50,
+      userId: user,
     }).then((res) => console.log(res));
     response = `CON Your 50kg of Compost is on it way, you will get it in 72hours
     00. Home
@@ -591,6 +609,7 @@ const UssdController = async (req, res) => {
       phoneNumber: phoneNumber,
       input: "Compost",
       quantity: 100,
+      userId: user,
     }).then((res) => console.log(res));
     response = `CON Your 100kg of Compost is on it way, you will get it in 72hours
     00. Home
@@ -601,6 +620,7 @@ const UssdController = async (req, res) => {
       phoneNumber: phoneNumber,
       input: "Compost",
       quantity: 150,
+      userId: user,
     }).then((res) => console.log(res));
     response = `CON Your 150kg of Compost is on it way, you will get it in 72hours
     00. Home
@@ -611,6 +631,7 @@ const UssdController = async (req, res) => {
       phoneNumber: phoneNumber,
       input: "Compost",
       quantity: 200,
+      userId: user,
     }).then((res) => console.log(res));
     response = `CON Your 200kg of Compost is on it way, you will get it in 72hours
     00. Home
@@ -621,6 +642,7 @@ const UssdController = async (req, res) => {
       phoneNumber: phoneNumber,
       input: "Compost",
       quantity: 250,
+      userId: user,
     }).then((res) => console.log(res));
     response = `CON Your 250kg of Compost is on it way, you will get it in 72hours
     00. Home
